@@ -8,7 +8,7 @@ if (!file.exists("household_power_consumption.txt")) {
   unzip(filename)
 }
 
-power_consumption <- read.csv("household_power_consumption.txt", header = TRUE, sep = ";")
+power_consumption <- read.csv("household_power_consumption.txt", header = TRUE, sep = ";", na.strings="?")
 power_consumption$Date <- as.Date(power_consumption$Date, format="%d/%m/%Y")
 
 start_date = as.Date("2007-02-01")
